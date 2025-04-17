@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cliente | Abundance</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ethers/5.7.2/ethers.umd.min.js"></script>
+    <link rel="stylesheet" href="cliente.css">
+</head>
+
+<body>
+    <header class="navbar">
+        <div class="logo">
+            <img src="../../../assets/img/logo-branca.png" alt="Logo Abundance" />
+        </div>
+        <button class="logout">Logout ⏻</button>
+    </header>
+
+    <main class="dashboard">
+        <section class="wallet-info">
+            <h1>Olá, Cliente!</h1>
+            <p>Você está navegando na página de <span class="highlight">Cliente</span>.</p>
+            <p>Número da carteira: <span id="shortAddress">Conectando...</span>
+                <button id="copyAddress" onclick="copiarEndereco()" aria-label="Copiar endereço">
+                    <img src="../../../assets/img/icon-copy.svg" alt="Copiar">
+                </button>
+            </p>
+        </section>
+
+        <section class="cards-container">
+            <div class="card">
+                <h2>Saldo ATK</h2>
+                <p id="saldoATK">Carregando...</p>
+            </div>
+            <div class="card">
+                <h2>Saldo TCO2</h2>
+                <p id="saldoTCO2">Carregando...</p>
+            </div>
+        </section>
+
+        <section class="request-form">
+            <h2>Solicitar Conversão</h2>
+            <div class="form">
+                <input type="number" id="quantidadeATK" placeholder="Quantidade ATK">
+                <button id="solicitarConversao">Solicitar Conversão</button>
+            </div>
+        </section>
+
+        <section class="requests-section">
+            <h2>Histórico de Conversões</h2>
+            <div class="requests-container">
+                <div class="pending-requests">
+                    <h2>Solicitações Pendentes</h3>
+                    <ul id="pendingRequests"></ul>
+                </div>
+                <div class="completed-requests">
+                    <h2>Solicitações Concluídas</h3>
+                    <ul id="completedRequests"></ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="cliente.js"></script>
+</body>
+
+</html>

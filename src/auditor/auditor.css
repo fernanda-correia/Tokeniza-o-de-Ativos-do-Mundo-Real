@@ -1,0 +1,264 @@
+/* === Fontes === */
+@font-face {
+    font-family: 'Mangueira';
+    src: url('../../assets/fonts/Mangueira/Mangueira-Regular.otf') format('opentype');
+    font-weight: 400;
+  }
+  @font-face {
+    font-family: 'Mangueira';
+    src: url('../../assets/fonts/Mangueira/Mangueira-Bold.otf') format('opentype');
+    font-weight: 700;
+  }
+  @font-face {
+    font-family: 'Mangueira';
+    src: url('../../assets/fonts/Mangueira/Mangueira-Black.otf') format('opentype');
+    font-weight: 900;
+  }
+  
+  /* === Reset e Globais === */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Mangueira', sans-serif;
+  }
+  
+  body {
+    background-color: #F6F8F9;
+    width: 100%;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+  
+  h1 {
+    font-size: 30px;
+    font-weight: 900;
+    margin-bottom: 10px;
+  }
+  
+  h2 {
+    font-size: 22px;
+    font-weight: 700;
+    margin: 15px 0;
+  }
+  
+  p {
+    margin: 10px 0;
+    font-weight: 400;
+  }
+  
+  .batch-search button {
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 400;
+    border: none;
+    border-radius: 5px;
+    background-color: #34346C;
+    color: white;
+    padding: 10px 20px;
+  }
+  
+  button:hover {
+    background-color: #4D4DA2;
+  }
+  
+  /* === Navbar === */
+  .navbar {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 25px 30px;
+    background-color: #34346C;
+    color: white;
+  }
+  
+  .logo img {
+    height: 40px;
+  }
+  
+  .logout {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  /* === Conteúdo === */
+  .dashboard {
+    width: 80%;
+    margin: 20px auto;
+  }
+  
+  .wallet-info .highlight {
+    font-weight: bold;
+    color: #34346C;
+  }
+  
+  .wallet-info button {
+    border: none;
+    cursor: pointer;
+}
+
+#copyAddress img {
+    width: 20px;
+    height: 20px;
+}
+  
+  /* === Cards === */
+  .cards-container {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .card {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    border: solid 1px #DEE6E9;
+    text-align: center;
+    flex: 1;
+  }
+  
+  /* === Requests === */
+  .requests-section .requests-container {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+    text-align:center;
+  }
+  
+  .pending-requests,
+  .history-requests {
+    flex: 1;
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    border: solid 1px #DEE6E9;
+  }
+  
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  li {
+    background: #F6F8F9;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 5px 0;
+    border: solid 1px #DEE6E9;
+    cursor: pointer;
+  }
+  
+  /* === Busca por Lote === */
+  .batch-search {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    border: solid 1px #DEE6E9;
+    margin-bottom: 20px;
+    text-align:center;
+
+  }
+  
+  .form-inline {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+  }
+  
+  .form-inline input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  /* === Modal === */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+  }
+  
+  .modal.show {
+    display: flex;
+  }
+  
+  .modal-content {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    width: 500px;
+    position: relative;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    font-family: 'Mangueira', sans-serif;
+  }
+  
+  .modal-content h2 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 15px;
+  }
+  
+  .modal-content p {
+    font-size: 16px;
+    margin: 8px 0;
+  }
+  
+  .modal-content .close {
+    position: absolute;
+    top: 12px;
+    right: 16px;
+    font-size: 22px;
+    font-weight: bold;
+    cursor: pointer;
+    color: #999;
+  }
+  
+  .modal-content .close:hover {
+    color: #34346C;
+  }
+  
+  /* Ações do modal */
+  .modal-actions {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-around;
+    gap: 10px;
+  }
+  
+  .modal-actions .btn-approve {
+    background-color: #2ECC71;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+  }
+  
+  .modal-actions .btn-reject {
+    background-color: #E74C3C;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+  }
+
+  .hidden {
+    display: none !important;
+  }
+  
+  

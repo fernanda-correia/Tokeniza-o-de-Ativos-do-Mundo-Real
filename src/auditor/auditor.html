@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Auditor | Abundance</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ethers/5.7.2/ethers.umd.min.js"></script>
+    <link rel="stylesheet" href="auditor.css" />
+</head>
+
+<body>
+    <header class="navbar">
+        <div class="logo">
+            <img src="../../../assets/img/logo-branca.png" alt="Logo Abundance" />
+        </div>
+        <button class="logout">Logout ⏻</button>
+    </header>
+
+    <main class="dashboard">
+        <section class="wallet-info">
+            <h1>Olá! Como podemos te ajudar hoje?</h1>
+            <p>Você está navegando na página de <span class="highlight">auditor</span>.</p>
+            <p>Número da carteira: <span id="shortAddress">Conectando...</span>
+                <button id="copyAddress" onclick="copiarEndereco()" aria-label="Copiar endereço">
+                    <img src="../../../assets/img/icon-copy.svg" alt="Copiar">
+                </button>
+            </p>
+        </section>
+
+        <section class="cards-container">
+            <div class="card">
+                <h2>ATKs Aprovados</h2>
+                <p id="atkAprovados">Carregando...</p>
+            </div>
+            <div class="card">
+                <h2>% Aprovados</h2>
+                <p id="percentAprovados">Carregando...</p>
+            </div>
+            <div class="card">
+                <h2>% Rejeitados</h2>
+                <p id="percentRejeitados">Carregando...</p>
+            </div>
+        </section>
+
+        <section class="requests-section">
+            <div class="requests-container">
+                <div class="pending-requests">
+                    <h2>Requests Pendentes</h2>
+                    <ul id="pendingRequests"></ul>
+                </div>
+                <div class="history-requests">
+                    <h2>Histórico de Auditorias</h2>
+                    <ul id="historyRequests"></ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="batch-search">
+            <h2>Buscar por Lote</h2>
+            <div class="form-inline">
+                <input type="number" id="loteBusca" placeholder="Número do lote" />
+                <button onclick="buscarPorLote()">Buscar</button>
+            </div>
+            <ul id="resultadoBusca"></ul>
+        </section>
+    </main>
+
+    <!-- Modal Detalhes Request -->
+    <div id="modalRequest" class="modal hidden">
+        <div class="modal-content">
+            <span class="close" onclick="fecharModal()">&times;</span>
+            <h2>Detalhes da Request</h2>
+            <p><strong>ID:</strong> <span id="modalId"></span></p>
+            <p><strong>Quantidade ATK:</strong> <span id="modalQtd"></span></p>
+            <p><strong>Lote:</strong> <span id="modalLote"></span></p>
+            <p><strong>Solicitante:</strong> <span id="modalRequester"></span></p>
+            <p><strong>Status:</strong> <span id="modalStatus"></span></p>
+            <div class="modal-actions" id="modalActions">
+                <button class="btn-approve" onclick="confirmarAprovacao()">Aprovar</button>
+                <button class="btn-reject" onclick="confirmarRejeicao()">Rejeitar</button>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="auditor.js"></script>
+</body>
+
+</html>
